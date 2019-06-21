@@ -1,10 +1,10 @@
-const closeDrawerType = 'DRAWER_CLOSE';
-const openDrawerType = 'DRAWER_OPEN';
+const closeDrawerType = 'LAYOUT_NAV_DRAWER_CLOSE';
+const openDrawerType = 'LAYOUT_NAV_DRAWER_OPEN';
 const initialState = { isOpen: true };
 
 export const actionCreators = {
-  closeNav: () => ({ type: closeDrawerType }),
-  openNav: () => ({ type: openDrawerType })
+  closeNavDrawer: () => ({ type: closeDrawerType }),
+  openNavDrawer: () => ({ type: openDrawerType })
 };
 
 export const reducer = (state, action) => {
