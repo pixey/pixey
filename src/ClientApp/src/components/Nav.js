@@ -12,14 +12,15 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
-import AssignmentIcon from '@material-ui/icons/Assignment';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../store/Layout'
+
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import LayersIcon from '@material-ui/icons/Layers';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCompactDisc, faChartBar, faBookOpen, faDownload } from '@fortawesome/free-solid-svg-icons'
 
 const drawerWidth = 240;
 
@@ -130,21 +131,27 @@ function Nav(props) {
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <ShoppingCartIcon />
+                          <FontAwesomeIcon icon={faCompactDisc} size="2x" />
                         </ListItemIcon>
-                        <ListItemText primary="Orders" />
+                        <ListItemText primary="Images" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <PeopleIcon />
+                          <FontAwesomeIcon icon={faDownload} size="2x" />
                         </ListItemIcon>
-                        <ListItemText primary="Customers" />
+                        <ListItemText primary="Downloads" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
-                            <BarChartIcon />
+                          <FontAwesomeIcon icon={faChartBar} size="2x" />
                         </ListItemIcon>
-                        <ListItemText primary="Reports" />
+                        <ListItemText primary="Usage statistics" />
+                    </ListItem>
+                    <ListItem button>
+                        <ListItemIcon>
+                          <FontAwesomeIcon icon={faBookOpen} size="2x" />
+                        </ListItemIcon>
+                        <ListItemText primary="Logs" />
                     </ListItem>
                     <ListItem button>
                         <ListItemIcon>
@@ -182,7 +189,6 @@ function Nav(props) {
     );
 }
 
-//export default withRouter(Nav);
 export default withRouter(connect(
   state => state.layout,
   dispatch => bindActionCreators(actionCreators, dispatch)

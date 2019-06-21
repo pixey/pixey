@@ -150,8 +150,6 @@ function Layout(props) {
   );
 }
 
-//export default withRouter(Layout);
-
 export default connect(
   state => state.layout,
   dispatch => bindActionCreators(actionCreators, dispatch)
