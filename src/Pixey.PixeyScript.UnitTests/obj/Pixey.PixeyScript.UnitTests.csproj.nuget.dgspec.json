@@ -1,0 +1,134 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript.UnitTests\\Pixey.PixeyScript.UnitTests.csproj": {}
+  },
+  "projects": {
+    "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript.UnitTests\\Pixey.PixeyScript.UnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript.UnitTests\\Pixey.PixeyScript.UnitTests.csproj",
+        "projectName": "Pixey.PixeyScript.UnitTests",
+        "projectPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript.UnitTests\\Pixey.PixeyScript.UnitTests.csproj",
+        "packagesPath": "C:\\Users\\lholota\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript.UnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lholota\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://artifactory.vips.vpsvc.com/api/nuget/nuget-release-local": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj": {
+                "projectPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.0.1, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj",
+        "projectName": "Pixey.PixeyScript",
+        "projectPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj",
+        "packagesPath": "C:\\Users\\lholota\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lholota\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://artifactory.vips.vpsvc.com/api/nuget/nuget-release-local": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Sprache": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

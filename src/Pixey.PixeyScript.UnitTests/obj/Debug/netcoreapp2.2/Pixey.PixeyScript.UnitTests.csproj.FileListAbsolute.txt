@@ -1,0 +1,17 @@
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\xunit.runner.reporters.netcoreapp10.dll
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\xunit.runner.utility.netcoreapp10.dll
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.deps.json
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.runtimeconfig.json
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.runtimeconfig.dev.json
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.dll
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.pdb
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.dll
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.pdb
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.csprojAssemblyReference.cache
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.csproj.CoreCompileInputs.cache
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.AssemblyInfoInputs.cache
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.AssemblyInfo.cs
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.csproj.CopyComplete
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.dll
+C:\git\gh\pixey\Pixey.PixeyScript.UnitTests\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.UnitTests.pdb

@@ -1,0 +1,15 @@
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\bin\Debug\netcoreapp2.2\Example.pixey
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.deps.json
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.runtimeconfig.json
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.runtimeconfig.dev.json
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.dll
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.pdb
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.dll
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\bin\Debug\netcoreapp2.2\Pixey.PixeyScript.pdb
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.csprojAssemblyReference.cache
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.csproj.CoreCompileInputs.cache
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.AssemblyInfoInputs.cache
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.AssemblyInfo.cs
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.csproj.CopyComplete
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.dll
+C:\git\gh\pixey\Pixey.PixeyScript.Tester\obj\Debug\netcoreapp2.2\Pixey.PixeyScript.Tester.pdb

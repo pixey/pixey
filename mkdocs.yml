@@ -1,0 +1,56 @@
+site_name: Pixey
+docs_dir: ./docs
+
+site_dir: ./docs-output
+site_author: Lukas Holota
+
+repo_url: https://github.com/pixey/pixey
+repo_name: pixey
+
+copyright: 'Created and maintained by Lukas Holota'
+strict: true
+nav:
+  - Test: test.md
+theme:
+  include_search_page: false
+  search_index_only: true
+  name: 'material'
+  language: en
+  feature:
+    tabs: false
+  palette:
+    primary: purple
+    accent: purple
+
+markdown_extensions:
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.admonition
+  - markdown.extensions.footnotes
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: homecentral
+      repo: docs
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - markdown.extensions.def_list
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_javascript:
+  - https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js
+extra_css:
+   - assets/mermaid.css
+   - assets/site.css
