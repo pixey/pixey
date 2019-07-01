@@ -41,7 +41,7 @@ const Diagnostics = props => {
           <Step key="dhcp" completed active={true}>
             <StepLabel>DHCP</StepLabel>
             <StepContent>
-              <List dense="true">
+              <List dense={true}>
                 <ListItem>
                   <ListItemIcon>
                     <FontAwesomeIcon icon={faCheck} size="lg" />
@@ -60,7 +60,7 @@ const Diagnostics = props => {
           <Step key="tftp" active={true}>
             <StepLabel>TFTP</StepLabel>
             <StepContent>
-              <List dense="true">
+              <List dense={true}>
                 <ListItem>
                   <ListItemIcon>
                     <FontAwesomeIcon icon={faCheck} size="lg" />

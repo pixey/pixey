@@ -1,61 +1,33 @@
 import React from 'react';
-import clsx from 'clsx';
-
 import Nav from './nav';
-import { DrawerWidth } from '../../consts';
 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faBook, faSmile } from '@fortawesome/free-solid-svg-icons';
+import { faBook, faSmile, faBars } from '@fortawesome/free-solid-svg-icons';
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
   },
-  toolbar: {
-    paddingRight: 24, // keep right padding when drawer closed
-  },
-  toolbarIcon: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  appBarShift: {
-    marginLeft: DrawerWidth,
-    width: `calc(100% - ${DrawerWidth}px)`,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: 36,
-  },
-  menuButtonHidden: {
-    display: 'none',
-  },
-  title: {
-    flexGrow: 1,
   },
   appBarSpacer: theme.mixins.toolbar,
+  toggleDrawerButton: {
+    marginLeft: '-15px'
+  },
+  title: {
+    marginLeft: '20px'
+  },
   content: {
     flexGrow: 1,
     height: '100vh',
@@ -73,31 +45,45 @@ function Layout(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="absolute" className={clsx(classes.appBar, props.isOpen && classes.appBarShift)}>
-        <Toolbar className={classes.toolbar}>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="Open drawer"
-            onClick={props.openNavDrawer}
-            className={clsx(classes.menuButton, props.isOpen && classes.menuButtonHidden)}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Page title
-            </Typography>
-          <IconButton color="inherit" title="Documentation">
-            <FontAwesomeIcon icon={faBook} />
-          </IconButton>
-          <IconButton color="inherit" title="Send us feedback">
-            <FontAwesomeIcon icon={faSmile} />
-          </IconButton>
-          <IconButton color="inherit" title="Pixey GitHub repository">
-            <FontAwesomeIcon icon={faGithub} />
-          </IconButton>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <Grid
+            justify="space-between"
+            alignItems="center"
+            container>
+            <Grid item>
+              <Grid container justify="flex-start" alignItems="center">
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  aria-label="Open drawer"
+                  className={classes.toggleDrawerButton}
+                  onClick={props.toggleNavDrawer}>
+                  <FontAwesomeIcon icon={faBars} size="sm" />
+                </IconButton>
+
+                <Typography component="h1" variant="h5" noWrap className={classes.title}>
+                  Pixey
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid item>
+              <div>
+                <IconButton color="inherit" title="Documentation">
+                  <FontAwesomeIcon icon={faBook} />
+                </IconButton>
+                <IconButton color="inherit" title="Send us feedback">
+                  <FontAwesomeIcon icon={faSmile} />
+                </IconButton>
+                <IconButton color="inherit" title="Pixey GitHub repository">
+                  <FontAwesomeIcon icon={faGithub} />
+                </IconButton>
+              </div>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
+
       <Nav />
 
       <main className={classes.content}>

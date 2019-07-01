@@ -4,8 +4,6 @@ import { DrawerWidth } from '../../../consts'
 import clsx from 'clsx';
 
 import React from 'react';
-import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'; // TODO: Replace with FA
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
@@ -14,22 +12,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompactDisc, faChartBar, faMicrochip, faWrench, faNetworkWired, faStethoscope, faScroll } from '@fortawesome/free-solid-svg-icons'
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
-    toolbarIcon: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        padding: '0 8px',
-        ...theme.mixins.toolbar,
-    },
-    title: {
-        flexGrow: 1,
+    drawer: {
+        width: DrawerWidth,
+        flexShrink: 0,
     },
     drawerPaper: {
         position: 'relative',
@@ -51,42 +42,22 @@ const useStyles = makeStyles(theme => ({
             width: theme.spacing(9),
         },
     },
-    paper: {
-        padding: theme.spacing(2),
-        display: 'flex',
-        overflow: 'auto',
-        flexDirection: 'column',
-    },
-    link: {
-        textDecoration: 'none'
-    },
-    activeLink: {
-        backgroundColor: 'red'
-    },
-    nested: {
-        paddingLeft: theme.spacing(4),
-    }
+    toolbar: theme.mixins.toolbar,
 }));
 
 function Nav(props) {
     const classes = useStyles();
-    const LinkRef = React.forwardRef((props, ref) => <div ref={ref}><NavLink {...props} /></div>)
+    const LinkRef = React.forwardRef((props, ref) => <div ref={ref}><NavLink {...props} /></div>);
 
     return (
         <Drawer
             variant="permanent"
+            className={classes.drawer}
+            open={props.isOpen}
             classes={{
                 paper: clsx(classes.drawerPaper, !props.isOpen && classes.drawerPaperClose),
-            }}
-            open={props.isOpen}
-        >
-            <div className={classes.toolbarIcon}>
-                <h2>Pixey</h2>
-                <IconButton onClick={props.closeNavDrawer}>
-                    <ChevronLeftIcon />
-                </IconButton>
-            </div>
-            <Divider />
+            }}>
+            <div className={classes.toolbar} />
             <List>
                 <div>
                     <ListItem button component={LinkRef} to="/">
