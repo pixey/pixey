@@ -11,11 +11,13 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import Fade from '@material-ui/core/Fade';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompactDisc, faChartBar, faMicrochip, faWrench, faNetworkWired, faStethoscope, faScroll } from '@fortawesome/free-solid-svg-icons'
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 import { NavLink } from 'react-router-dom';
+import { Collapse } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     drawer: {
@@ -42,7 +44,28 @@ const useStyles = makeStyles(theme => ({
             width: theme.spacing(9),
         },
     },
+    subHeader: {
+        transition: theme.transitions.create('display', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+        display: 'block'
+    },
+    subHeaderHidden: {
+        transition: theme.transitions.create('display', {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.leavingScreen,
+        }),
+        display: 'none'
+    },
     toolbar: theme.mixins.toolbar,
+    collapsedMenuItem: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    collapsedMenuItemIcon: {
+        minWidth: '0'
+    }
 }));
 
 function Nav(props) {
@@ -84,11 +107,14 @@ function Nav(props) {
             <List
                 component="nav"
                 subheader={
-                    props.isOpen ?
-                        <ListSubheader component="div" id="nested-list-subheader">
+                    <Collapse in={props.isOpen}>
+                        <ListSubheader
+                            component="div"
+                            id="nested-list-subheader">
                             Diagnostics
-                    </ListSubheader>
-                        : <span />}>
+                        </ListSubheader>
+                    </Collapse>
+                }>
                 <div>
                     <ListItem button component={LinkRef} to="/diagnostics/logs">
                         <ListItemIcon>
@@ -96,23 +122,32 @@ function Nav(props) {
                         </ListItemIcon>
                         <ListItemText primary="Event Logs" />
                     </ListItem>
-                    <ListItem button component={LinkRef} to="/diagnostics/troubleshooting">
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faStethoscope} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText primary="Troubleshooting" />
-                    </ListItem>
+                    { props.isOpen ?
+                        <ListItem button component={LinkRef} to="/diagnostics/troubleshooting">
+                            <ListItemIcon>
+                                <FontAwesomeIcon icon={faStethoscope} size="2x" />
+                            </ListItemIcon>
+                            <ListItemText primary="Troubleshooting" />
+                        </ListItem>
+                        :
+                        <ListItem button component={LinkRef} to="/diagnostics/troubleshooting" className={classes.collapsedMenuItem}>
+                            <ListItemIcon className={classes.collapsedMenuItemIcon}>
+                                <FontAwesomeIcon icon={faStethoscope} size="2x" />
+                            </ListItemIcon>
+                        </ListItem>
+                    }
                 </div>
             </List>
             <Divider />
             <List
                 component="nav"
                 subheader={
-                    props.isOpen ?
+                    <Collapse in={props.isOpen}>
                         <ListSubheader component="div" id="nested-list-subheader">
                             Settings
-                    </ListSubheader>
-                        : <span />}>
+                        </ListSubheader>
+                    </Collapse>
+                }>
                 <div>
                     <ListItem button component={LinkRef} to="/settings">
                         <ListItemIcon>
@@ -134,7 +169,7 @@ function Nav(props) {
                     </ListItem>
                 </div>
             </List>
-        </Drawer>
+        </Drawer >
     );
 }
 
