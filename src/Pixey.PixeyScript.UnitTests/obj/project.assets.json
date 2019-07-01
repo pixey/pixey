@@ -5899,11 +5899,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript.UnitTests\\Pixey.PixeyScript.UnitTests.csproj",
+      "projectUniqueName": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript.UnitTests\\Pixey.PixeyScript.UnitTests.csproj",
       "projectName": "Pixey.PixeyScript.UnitTests",
-      "projectPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript.UnitTests\\Pixey.PixeyScript.UnitTests.csproj",
+      "projectPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript.UnitTests\\Pixey.PixeyScript.UnitTests.csproj",
       "packagesPath": "C:\\Users\\lholota\\.nuget\\packages\\",
-      "outputPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript.UnitTests\\obj\\",
+      "outputPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript.UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5923,8 +5923,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj": {
-              "projectPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj"
+            "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj": {
+              "projectPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj"
             }
           }
         }

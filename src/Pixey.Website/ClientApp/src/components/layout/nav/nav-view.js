@@ -12,9 +12,13 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompactDisc, faChartBar, faBookOpen, faDownload, faDatabase } from '@fortawesome/free-solid-svg-icons'
+import { faCompactDisc, faChartBar, faMicrochip, faWrench, faNetworkWired, faStethoscope } from '@fortawesome/free-solid-svg-icons'
+import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
+import { NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
     toolbarIcon: {
@@ -52,11 +56,21 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         overflow: 'auto',
         flexDirection: 'column',
+    },
+    link: {
+        textDecoration: 'none'
+    },
+    activeLink: {
+        backgroundColor: 'red'
+    },
+    nested: {
+        paddingLeft: theme.spacing(4),
     }
 }));
 
 function Nav(props) {
     const classes = useStyles();
+    const LinkRef = React.forwardRef((props, ref) => <div ref={ref}><NavLink {...props} /></div>)
 
     return (
         <Drawer
@@ -67,6 +81,7 @@ function Nav(props) {
             open={props.isOpen}
         >
             <div className={classes.toolbarIcon}>
+                <h2>Pixey</h2>
                 <IconButton onClick={props.closeNavDrawer}>
                     <ChevronLeftIcon />
                 </IconButton>
@@ -74,38 +89,64 @@ function Nav(props) {
             <Divider />
             <List>
                 <div>
-                    <ListItem button>
+                    <ListItem button component={LinkRef} to="/">
                         <ListItemIcon>
-                        <FontAwesomeIcon icon={faDatabase} size="2x" />
+                            <FontAwesomeIcon icon={faChartBar} size="2x" />
                         </ListItemIcon>
                         <ListItemText primary="Dashboard" />
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button component={LinkRef} to="/images">
                         <ListItemIcon>
                             <FontAwesomeIcon icon={faCompactDisc} size="2x" />
                         </ListItemIcon>
                         <ListItemText primary="Images" />
                     </ListItem>
-                    <ListItem button>
+
+                    <ListItem button component={LinkRef} to="/logs">
                         <ListItemIcon>
-                            <FontAwesomeIcon icon={faDownload} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText primary="Downloads" />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faChartBar} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText primary="Usage statistics" />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faBookOpen} size="2x" />
+                            <FontAwesomeIcon icon={faFileAlt} size="2x" />
                         </ListItemIcon>
                         <ListItemText primary="Logs" />
                     </ListItem>
+                    <ListItem button component={LinkRef} to="/diagnostics">
+                        <ListItemIcon>
+                            <FontAwesomeIcon icon={faStethoscope} size="2x" />
+                        </ListItemIcon>
+                        <ListItemText primary="Diagnostics" />
+                    </ListItem>
                 </div>
             </List>
+            <Divider />
+            <List
+                component="nav"
+                subheader={
+                    props.isOpen ?
+                        <ListSubheader component="div" id="nested-list-subheader">
+                            Settings
+                    </ListSubheader>
+                        : <span />}>
+                <div>
+                    <ListItem button component={LinkRef} to="/settings">
+                        <ListItemIcon>
+                            <FontAwesomeIcon icon={faWrench} size="2x" />
+                        </ListItemIcon>
+                        <ListItemText>General</ListItemText>
+                    </ListItem>
+                    <ListItem button component={LinkRef} to="/settings/pxe-binaries">
+                        <ListItemIcon>
+                            <FontAwesomeIcon icon={faMicrochip} size="2x" />
+                        </ListItemIcon>
+                        <ListItemText>Bootloader</ListItemText>
+                    </ListItem>
+                    <ListItem button component={LinkRef} to="/settings/network">
+                        <ListItemIcon>
+                            <FontAwesomeIcon icon={faNetworkWired} size="2x" />
+                        </ListItemIcon>
+                        <ListItemText>Network</ListItemText>
+                    </ListItem>
+                </div>
+            </List>
+            <Divider />
         </Drawer>
     );
 }

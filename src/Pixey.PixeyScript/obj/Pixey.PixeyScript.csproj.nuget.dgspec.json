@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj": {}
+    "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj": {}
   },
   "projects": {
-    "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj": {
+    "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj",
+        "projectUniqueName": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj",
         "projectName": "Pixey.PixeyScript",
-        "projectPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj",
+        "projectPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript\\Pixey.PixeyScript.csproj",
         "packagesPath": "C:\\Users\\lholota\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\gh\\pixey\\src\\Pixey.PixeyScript\\obj\\",
+        "outputPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.PixeyScript\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -7,3 +7,12 @@ C:\git\gh\pixey\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.Ass
 C:\git\gh\pixey\Pixey.PixeyScript\bin\Debug\netstandard2.0\Pixey.PixeyScript.pdb
 C:\git\gh\pixey\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.dll
 C:\git\gh\pixey\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.pdb
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\bin\Debug\netstandard2.0\Pixey.PixeyScript.deps.json
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\bin\Debug\netstandard2.0\Pixey.PixeyScript.dll
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\bin\Debug\netstandard2.0\Pixey.PixeyScript.pdb
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.csprojAssemblyReference.cache
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.csproj.CoreCompileInputs.cache
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.AssemblyInfoInputs.cache
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.AssemblyInfo.cs
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.dll
+C:\git\gh\pixey\pixey\src\Pixey.PixeyScript\obj\Debug\netstandard2.0\Pixey.PixeyScript.pdb

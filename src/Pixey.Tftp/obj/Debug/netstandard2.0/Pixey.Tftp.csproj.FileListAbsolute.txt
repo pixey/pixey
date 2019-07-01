@@ -1,0 +1,12 @@
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\bin\Debug\netstandard2.0\Pixey.Tftp.deps.json
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\bin\Debug\netstandard2.0\Pixey.Tftp.dll
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\obj\Debug\netstandard2.0\Pixey.Tftp.csproj.CoreCompileInputs.cache
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\obj\Debug\netstandard2.0\Pixey.Tftp.AssemblyInfoInputs.cache
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\obj\Debug\netstandard2.0\Pixey.Tftp.AssemblyInfo.cs
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\obj\Debug\netstandard2.0\Pixey.Tftp.csprojAssemblyReference.cache
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\bin\Debug\netstandard2.0\Pixey.Tftp.pdb
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\bin\Debug\netstandard2.0\Pixey.Domain.dll
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\bin\Debug\netstandard2.0\Pixey.Domain.pdb
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\obj\Debug\netstandard2.0\Pixey.Tftp.csproj.CopyComplete
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\obj\Debug\netstandard2.0\Pixey.Tftp.dll
+C:\git\gh\pixey\pixey\src\Pixey.Tftp\obj\Debug\netstandard2.0\Pixey.Tftp.pdb
