@@ -4,14 +4,14 @@
     "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\Pixey.Storage.csproj": {}
   },
   "projects": {
-    "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\Pixey.Storage.csproj": {
+    "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Domain\\Pixey.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\Pixey.Storage.csproj",
-        "projectName": "Pixey.Storage",
-        "projectPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\Pixey.Storage.csproj",
+        "projectUniqueName": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Domain\\Pixey.Domain.csproj",
+        "projectName": "Pixey.Domain",
+        "projectPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Domain\\Pixey.Domain.csproj",
         "packagesPath": "C:\\Users\\lholota\\.nuget\\packages\\",
-        "outputPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\obj\\",
+        "outputPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,6 +42,71 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\Pixey.Storage.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\Pixey.Storage.csproj",
+        "projectName": "Pixey.Storage",
+        "projectPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\Pixey.Storage.csproj",
+        "packagesPath": "C:\\Users\\lholota\\.nuget\\packages\\",
+        "outputPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Storage\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lholota\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://artifactory.vips.vpsvc.com/api/nuget/nuget-release-local": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Domain\\Pixey.Domain.csproj": {
+                "projectPath": "C:\\git\\gh\\pixey\\pixey\\src\\Pixey.Domain\\Pixey.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "LiteDB": {
+              "target": "Package",
+              "version": "[4.1.4, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

@@ -4,6 +4,6 @@ namespace Pixey.Domain.BootLoaders
 {
     public interface IBootLoaderService
     {
-        Stream GetBootLoaderBinary(string requestedFileName);
+        Stream GetBootLoaderBinaryByFileName(string fileName);
     }
 }

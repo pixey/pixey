@@ -50,12 +50,12 @@ namespace Pixey.Tftp
             {
                 LogDownloadStarted();
 
-                using (var binaryStream = _bootLoaderService.GetBootLoaderBinary(_transfer.Filename))
+                using (var binaryStream = _bootLoaderService.GetBootLoaderBinaryByFileName(_transfer.Filename))
                 {
                     _transfer.Start(binaryStream);
                 }
             }
-            catch (InvalidBootLoaderBinaryException)
+            catch (InvalidBootLoaderFileNameException)
             {
                 LogDownloadFailedWithInvalidFileName();
 

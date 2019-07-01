@@ -16,7 +16,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCompactDisc, faChartBar, faMicrochip, faWrench, faNetworkWired, faStethoscope } from '@fortawesome/free-solid-svg-icons'
+import { faCompactDisc, faChartBar, faMicrochip, faWrench, faNetworkWired, faStethoscope, faScroll } from '@fortawesome/free-solid-svg-icons'
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
 import { NavLink } from 'react-router-dom';
 
@@ -101,18 +101,35 @@ function Nav(props) {
                         </ListItemIcon>
                         <ListItemText primary="Images" />
                     </ListItem>
-
-                    <ListItem button component={LinkRef} to="/logs">
+                    <ListItem button component={LinkRef} to="/boot-scripts">
+                        <ListItemIcon>
+                            <FontAwesomeIcon icon={faScroll} size="2x" />
+                        </ListItemIcon>
+                        <ListItemText primary="Boot scripts" />
+                    </ListItem>
+                </div>
+            </List>
+            <Divider />
+            <List
+                component="nav"
+                subheader={
+                    props.isOpen ?
+                        <ListSubheader component="div" id="nested-list-subheader">
+                            Diagnostics
+                    </ListSubheader>
+                        : <span />}>
+                <div>
+                    <ListItem button component={LinkRef} to="/diagnostics/logs">
                         <ListItemIcon>
                             <FontAwesomeIcon icon={faFileAlt} size="2x" />
                         </ListItemIcon>
-                        <ListItemText primary="Logs" />
+                        <ListItemText primary="Event Logs" />
                     </ListItem>
-                    <ListItem button component={LinkRef} to="/diagnostics">
+                    <ListItem button component={LinkRef} to="/diagnostics/troubleshooting">
                         <ListItemIcon>
                             <FontAwesomeIcon icon={faStethoscope} size="2x" />
                         </ListItemIcon>
-                        <ListItemText primary="Diagnostics" />
+                        <ListItemText primary="Troubleshooting" />
                     </ListItem>
                 </div>
             </List>
@@ -146,7 +163,6 @@ function Nav(props) {
                     </ListItem>
                 </div>
             </List>
-            <Divider />
         </Drawer>
     );
 }
