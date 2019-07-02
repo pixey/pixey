@@ -6,18 +6,12 @@ import clsx from 'clsx';
 import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import Fade from '@material-ui/core/Fade';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCompactDisc, faChartBar, faMicrochip, faWrench, faNetworkWired, faStethoscope, faScroll } from '@fortawesome/free-solid-svg-icons'
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
-import { NavLink } from 'react-router-dom';
-import { Collapse } from '@material-ui/core';
+
+import MenuSection from './menu-section';
+import MenuItem from './menu-item';
 
 const useStyles = makeStyles(theme => ({
     drawer: {
@@ -70,7 +64,6 @@ const useStyles = makeStyles(theme => ({
 
 function Nav(props) {
     const classes = useStyles();
-    const LinkRef = React.forwardRef((props, ref) => <div ref={ref}><NavLink {...props} /></div>);
 
     return (
         <Drawer
@@ -81,94 +74,40 @@ function Nav(props) {
                 paper: clsx(classes.drawerPaper, !props.isOpen && classes.drawerPaperClose),
             }}>
             <div className={classes.toolbar} />
-            <List>
-                <div>
-                    <ListItem button component={LinkRef} to="/">
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faChartBar} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText primary="Dashboard" />
-                    </ListItem>
-                    <ListItem button component={LinkRef} to="/images">
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faCompactDisc} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText primary="Images" />
-                    </ListItem>
-                    <ListItem button component={LinkRef} to="/boot-scripts">
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faScroll} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText primary="Boot scripts" />
-                    </ListItem>
-                </div>
-            </List>
+            <MenuSection
+                isDrawerOpen={props.isOpen}
+                menuItems={
+                    <div>
+                        <MenuItem icon={faChartBar} text="Dashboard" linkTo="/" isDrawerOpen={props.isOpen} />
+                        <MenuItem icon={faCompactDisc} text="Images" linkTo="/images" isDrawerOpen={props.isOpen} />
+                        <MenuItem icon={faScroll} text="Boot scripts" linkTo="/boot-scripts" isDrawerOpen={props.isOpen} />
+                    </div>
+                }
+            />
             <Divider />
-            <List
-                component="nav"
-                subheader={
-                    <Collapse in={props.isOpen}>
-                        <ListSubheader
-                            component="div"
-                            id="nested-list-subheader">
-                            Diagnostics
-                        </ListSubheader>
-                    </Collapse>
-                }>
-                <div>
-                    <ListItem button component={LinkRef} to="/diagnostics/logs">
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faFileAlt} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText primary="Event Logs" />
-                    </ListItem>
-                    { props.isOpen ?
-                        <ListItem button component={LinkRef} to="/diagnostics/troubleshooting">
-                            <ListItemIcon>
-                                <FontAwesomeIcon icon={faStethoscope} size="2x" />
-                            </ListItemIcon>
-                            <ListItemText primary="Troubleshooting" />
-                        </ListItem>
-                        :
-                        <ListItem button component={LinkRef} to="/diagnostics/troubleshooting" className={classes.collapsedMenuItem}>
-                            <ListItemIcon className={classes.collapsedMenuItemIcon}>
-                                <FontAwesomeIcon icon={faStethoscope} size="2x" />
-                            </ListItemIcon>
-                        </ListItem>
-                    }
-                </div>
-            </List>
+            <MenuSection
+                title="Diagnostics"
+                isDrawerOpen={props.isOpen}
+                menuItems={
+                    <div>
+                        <MenuItem icon={faFileAlt} text="Event Logs" linkTo="/diagnostics/logs" isDrawerOpen={props.isOpen} />
+                        <MenuItem icon={faStethoscope} text="Troubleshooting" linkTo="/settings/troubleshooting" isDrawerOpen={props.isOpen} />
+                    </div>
+                }
+                />
+
             <Divider />
-            <List
-                component="nav"
-                subheader={
-                    <Collapse in={props.isOpen}>
-                        <ListSubheader component="div" id="nested-list-subheader">
-                            Settings
-                        </ListSubheader>
-                    </Collapse>
-                }>
-                <div>
-                    <ListItem button component={LinkRef} to="/settings">
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faWrench} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText>General</ListItemText>
-                    </ListItem>
-                    <ListItem button component={LinkRef} to="/settings/pxe-binaries">
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faMicrochip} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText>Bootloader</ListItemText>
-                    </ListItem>
-                    <ListItem button component={LinkRef} to="/settings/network">
-                        <ListItemIcon>
-                            <FontAwesomeIcon icon={faNetworkWired} size="2x" />
-                        </ListItemIcon>
-                        <ListItemText>Network</ListItemText>
-                    </ListItem>
-                </div>
-            </List>
+            <MenuSection
+                title="Settings"
+                isDrawerOpen={props.isOpen}
+                menuItems={
+                    <div>
+                        <MenuItem icon={faWrench} text="General" linkTo="/settings" isDrawerOpen={props.isOpen} />
+                        <MenuItem icon={faMicrochip} text="Bootloaders" linkTo="/settings/pxe-binaries" isDrawerOpen={props.isOpen} />
+                        <MenuItem icon={faNetworkWired} text="Network" linkTo="/settings/network" isDrawerOpen={props.isOpen} />
+                    </div>
+                }
+                />
         </Drawer >
     );
 }
