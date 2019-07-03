@@ -34,6 +34,8 @@ const Diagnostics = props => {
 
       <Typography variant="h3" component="h1" gutterBottom>Diagnostics</Typography>
 
+      <Button onClick={props.start}>Send message to server</Button>
+
       {/* Note: The start button should be where the stepper is - big button in the middle  */}
 
       <Paper className={classes.root}>

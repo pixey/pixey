@@ -7,3 +7,6 @@ C:\git\gh\pixey\pixey\src\Pixey.Storage\obj\Debug\netstandard2.0\Pixey.Storage.A
 C:\git\gh\pixey\pixey\src\Pixey.Storage\obj\Debug\netstandard2.0\Pixey.Storage.AssemblyInfo.cs
 C:\git\gh\pixey\pixey\src\Pixey.Storage\obj\Debug\netstandard2.0\Pixey.Storage.dll
 C:\git\gh\pixey\pixey\src\Pixey.Storage\obj\Debug\netstandard2.0\Pixey.Storage.pdb
+C:\git\gh\pixey\pixey\src\Pixey.Storage\bin\Debug\netstandard2.0\Pixey.Domain.dll
+C:\git\gh\pixey\pixey\src\Pixey.Storage\bin\Debug\netstandard2.0\Pixey.Domain.pdb
+C:\git\gh\pixey\pixey\src\Pixey.Storage\obj\Debug\netstandard2.0\Pixey.Storage.csproj.CopyComplete

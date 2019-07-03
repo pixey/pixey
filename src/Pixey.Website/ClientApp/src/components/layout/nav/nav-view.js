@@ -91,7 +91,7 @@ function Nav(props) {
                 menuItems={
                     <div>
                         <MenuItem icon={faFileAlt} text="Event Logs" linkTo="/diagnostics/logs" isDrawerOpen={props.isOpen} />
-                        <MenuItem icon={faStethoscope} text="Troubleshooting" linkTo="/settings/troubleshooting" isDrawerOpen={props.isOpen} />
+                        <MenuItem icon={faStethoscope} text="Troubleshooting" linkTo="/diagnostics/troubleshooting" isDrawerOpen={props.isOpen} />
                     </div>
                 }
                 />

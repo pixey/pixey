@@ -1,5 +1,5 @@
-import View from './diagnostics-view';
-import { actionCreators } from './diagnostics-store';
+import View from './troubleshooting-view';
+import { actionCreators } from './troubleshooting-store';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

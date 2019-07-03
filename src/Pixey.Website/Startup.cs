@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Pixey.Domain;
+using Pixey.Storage;
 using Pixey.Tftp;
+using Pixey.Website.SignalHubs;
 
 namespace Pixey.Website
 {
@@ -21,9 +23,12 @@ namespace Pixey.Website
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationServices();
             services.AddDomain();
             services.AddTftp();
+            services.AddStorage();
 
+            services.AddSignalR();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // In production, the React files will be served from this directory
@@ -50,6 +55,11 @@ namespace Pixey.Website
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<UpdateHub>("/api/v1/update-hub");
+            });
 
             app.UseMvc(routes =>
             {

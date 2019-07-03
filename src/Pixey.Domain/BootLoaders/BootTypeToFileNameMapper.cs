@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace Pixey.Domain.BootLoaders
@@ -14,7 +15,9 @@ namespace Pixey.Domain.BootLoaders
 
         public bool TryGetBootType(string fileName, out BootType bootType)
         {
-            _mappings.TryGetValue(fileName, out bootType);
+            throw new NotImplementedException();
+
+            // _mappings.TryGetValue(fileName, out bootType);
         }
 
         private IReadOnlyDictionary<string, BootType> LoadMappings()

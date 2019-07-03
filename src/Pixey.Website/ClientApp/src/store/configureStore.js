@@ -1,20 +1,24 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
+import logger from 'redux-logger'
+
 import * as Layout from '../components/layout/layout-store';
 import * as Counter from '../components/counter/counter-store';
-import * as WeatherForecasts from './WeatherForecasts';
+
+import websocketMiddleware from './middlewares/websocket-middleware';
 
 export default function configureStore (history, initialState) {
   const reducers = {
     layout: Layout.reducer,
-    counter: Counter.reducer,
-    weatherForecasts: WeatherForecasts.reducer
+    counter: Counter.reducer
   };
 
   const middleware = [
     thunk,
-    routerMiddleware(history)
+    routerMiddleware(history),
+    logger,
+    websocketMiddleware()
   ];
 
   // In development, use the browser's Redux dev tools extension if installed
