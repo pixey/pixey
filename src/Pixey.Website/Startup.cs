@@ -1,3 +1,5 @@
+using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Pixey.Domain;
 using Pixey.Storage;
 using Pixey.Tftp;
+using Pixey.Website.Middlewares;
 using Pixey.Website.SignalHubs;
 
 namespace Pixey.Website
@@ -27,6 +30,16 @@ namespace Pixey.Website
             services.AddDomain();
             services.AddTftp();
             services.AddStorage();
+
+            services.AddMiddlewares();
+            services.AddSignalrHelpers();
+
+            services
+                .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.ExpireTimeSpan = TimeSpan.FromDays(99);
+                });
 
             services.AddSignalR();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -55,6 +68,10 @@ namespace Pixey.Website
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            // This is to replace the future authentication to define temporary user context
+            app.UseMiddleware<SignInUserMiddleware>();
+            app.UseAuthentication();
 
             app.UseSignalR(routes =>
             {

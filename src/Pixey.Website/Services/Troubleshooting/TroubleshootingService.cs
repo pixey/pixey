@@ -12,28 +12,29 @@ namespace Pixey.Website.Services.Troubleshooting
 
         private readonly ITroubleshooterFactory _troubleshooterFactory;
         private readonly IHubContext<UpdateHub, IUpdateHubClient> _updateHubContext;
-        private readonly ISlidingExpirationMemoryStore<ITroubleshooter> _troubleshooterStore;
+        private readonly ISlidingExpirationMemoryStore<TroubleshooterStoreEntry> _entryStore;
 
         public TroubleshootingService(
             ITroubleshooterFactory troubleshooterFactory,
             IHubContext<UpdateHub, IUpdateHubClient> updateHubContext,
             ISlidingExpirationMemoryStoreFactory troubleshooterStoreFactory)
         {
+            _entryStore = troubleshooterStoreFactory.Create<TroubleshooterStoreEntry>(TroubleshooterSlidingExpiration);
             _troubleshooterFactory = troubleshooterFactory;
             _updateHubContext = updateHubContext;
-            _troubleshooterStore = troubleshooterStoreFactory.Create<ITroubleshooter>(TroubleshooterSlidingExpiration);
 
-            _troubleshooterStore.RemovingExpiredItem += UnsubscribeTroubleshooterEvents;
+            _entryStore.RemovingExpiredItem += UnsubscribeEntryEvents;
         }
 
         public string StartTroubleshooting(string userId)
         {
             var id = Guid.NewGuid().ToString("N");
             var troubleshooter = _troubleshooterFactory.Create();
+            var entry = new TroubleshooterStoreEntry(troubleshooter, userId);
 
-            troubleshooter.StatusChanged += HandleStatusChanged;
+            entry.StatusChanged += HandleStatusChanged;
 
-            _troubleshooterStore.Add(id, troubleshooter);
+            _entryStore.Add(id, entry);
 
             troubleshooter.Start();
 
@@ -42,32 +43,33 @@ namespace Pixey.Website.Services.Troubleshooting
 
         public TroubleshootingStatus GetTroubleshootingStatus(string id)
         {
-            if (!_troubleshooterStore.TryGet(id, out var troubleshooter))
+            if (!_entryStore.TryGet(id, out var entry))
             {
-                throw new TroubleshootingNotFoundException(id);
+                throw new TroubleshooterNotFoundException(id);
             }
 
-            return troubleshooter.GetStatus();
+            return entry.Troubleshooter.GetStatus();
         }
 
         public void CancelTroubleshooting(string id)
         {
-            if(!_troubleshooterStore.TryGet(id, out var troubleshooter))
+            if(!_entryStore.TryGet(id, out var entry))
             {
-                throw new TroubleshootingNotFoundException(id);
+                throw new TroubleshooterNotFoundException(id);
             }
 
-            troubleshooter.Cancel();
+            entry.Troubleshooter.Cancel();
         }
 
-        private void UnsubscribeTroubleshooterEvents(object sender, ItemEventArgs<ITroubleshooter> e)
+        private void UnsubscribeEntryEvents(object sender, ItemEventArgs<TroubleshooterStoreEntry> e)
         {
             e.Item.StatusChanged -= HandleStatusChanged;
+            e.Item.Dispose();
         }
 
-        private void HandleStatusChanged(object sender, TroubleshootingStatusEventArgs e)
+        private void HandleStatusChanged(object sender, TroubleshooterStoreEntryEventArgs e)
         {
-            _updateHubContext.Clients.All.UpdateTroubleshootingStatus(e.Status).Wait();
+            _updateHubContext.Clients.User(e.UserId).UpdateTroubleshootingStatus(e.Status).Wait();
         }
     }
 }

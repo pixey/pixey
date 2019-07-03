@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Pixey.Website.Middlewares;
 using Pixey.Website.Payloads;
 using Pixey.Website.Services.Troubleshooting;
 
@@ -16,9 +17,14 @@ namespace Pixey.Website.Controllers
         }
 
         [HttpPost("/api/v1/diagnostics/troubleshooting")]
-        public CreatedAtRouteResult StartTroubleshooting()
+        public IActionResult StartTroubleshooting()
         {
-            var id = _troubleshootingService.StartTroubleshooting("TODO: UserId");
+            if (!Request.Cookies.TryGetValue(SignInUserMiddleware.UserIdCookieName, out var userId))
+            {
+                return BadRequest("The request did not contain the UserId cookie.");
+            }
+
+            var id = _troubleshootingService.StartTroubleshooting(userId);
             var payload = new TroubleshootingIdPayload(id);
 
             return CreatedAtRoute(nameof(GetTroubleshooting), new { id }, payload);
@@ -35,7 +41,7 @@ namespace Pixey.Website.Controllers
 
                 return Ok(payload);
             }
-            catch (TroubleshootingNotFoundException)
+            catch (TroubleshooterNotFoundException)
             {
                 return NotFound(id);
             }
@@ -50,7 +56,7 @@ namespace Pixey.Website.Controllers
 
                 return Ok();
             }
-            catch (TroubleshootingNotFoundException)
+            catch (TroubleshooterNotFoundException)
             {
                 return NotFound(id);
             }

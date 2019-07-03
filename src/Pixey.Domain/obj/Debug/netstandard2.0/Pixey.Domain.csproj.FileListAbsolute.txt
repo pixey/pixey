@@ -1,9 +1,0 @@
-C:\git\gh\pixey\pixey\src\Pixey.Domain\bin\Debug\netstandard2.0\Pixey.Domain.deps.json
-C:\git\gh\pixey\pixey\src\Pixey.Domain\bin\Debug\netstandard2.0\Pixey.Domain.dll
-C:\git\gh\pixey\pixey\src\Pixey.Domain\bin\Debug\netstandard2.0\Pixey.Domain.pdb
-C:\git\gh\pixey\pixey\src\Pixey.Domain\obj\Debug\netstandard2.0\Pixey.Domain.csprojAssemblyReference.cache
-C:\git\gh\pixey\pixey\src\Pixey.Domain\obj\Debug\netstandard2.0\Pixey.Domain.csproj.CoreCompileInputs.cache
-C:\git\gh\pixey\pixey\src\Pixey.Domain\obj\Debug\netstandard2.0\Pixey.Domain.AssemblyInfoInputs.cache
-C:\git\gh\pixey\pixey\src\Pixey.Domain\obj\Debug\netstandard2.0\Pixey.Domain.AssemblyInfo.cs
-C:\git\gh\pixey\pixey\src\Pixey.Domain\obj\Debug\netstandard2.0\Pixey.Domain.dll
-C:\git\gh\pixey\pixey\src\Pixey.Domain\obj\Debug\netstandard2.0\Pixey.Domain.pdb
